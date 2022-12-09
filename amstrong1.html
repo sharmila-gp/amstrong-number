@@ -1,0 +1,110 @@
+<html>
+<head>
+<style>
+	label,p{
+		margin:20px;
+	}
+	input{
+	width:15%;
+	padding:10px;
+	}
+	#out{
+		width:25%;
+	}
+	div{
+		margin:10px;
+	}
+	#res{
+		width:10%;
+	}
+</style>
+</head>
+<body>
+<script>
+	/* amstrong number for 3 digits
+	var num = prompt("Enter a number");
+	var rem = 0;
+	var sum = num;
+	var x=0;
+	while(num!=0){
+		rem=num%10;
+		x=x+rem*rem*rem;
+		num=parseInt(num/10);
+	}
+	console.log(x);
+	if(sum==x){
+		console.log(sum+" is a amstrong number");
+	}
+	else{
+		console.log(sum+" is not a amstrong number");
+	}*/
+	
+	var form1 = document.createElement("form");
+	document.body.appendChild( form1);
+	
+	var div1 = document.createElement("div");
+	form1.appendChild(div1);
+	
+	
+	var label1 = document.createElement("label");
+	label1.innerHTML = "Input :";
+	div1.appendChild(label1);
+	
+	var input1=document.createElement("input")
+	input1.setAttribute("type","number");
+	input1.setAttribute("id","in");
+	input1.setAttribute("min","11");
+	div1.appendChild(input1);
+	
+	var div2 = document.createElement("div");
+	form1.appendChild(div2);
+	
+	var label2 = document.createElement("label");
+	label2.innerHTML = "Output:";
+	div2.appendChild(label2);
+	
+	var output=document.createElement("input")
+	output.setAttribute("type","text");
+	output.setAttribute("id","out");
+	div2.appendChild(output);
+	
+	var div3 = document.createElement("div");
+	form1.appendChild(div3);
+	
+	var input2=document.createElement("input")
+	input2.setAttribute("type","reset");
+	input2.setAttribute("id","res");
+	input2.innerHTML="Reset";
+	div3.appendChild(input2);
+	
+	input1.addEventListener("input",amstrong);
+	function amstrong(){
+	var num = input1.value
+	var rem = 0;
+	var sum = num;
+	var y=num;
+	var total =0;
+	var x=0;
+	var i=0;
+	while(num!=0){
+		rem=num%10;
+		num =parseInt(num/10);
+		i++;
+	}
+	while(y!=0){
+		rem=y%10;
+		x=Math.pow(rem,i);
+		total=total+x;
+		y=parseInt(y/10);
+	}
+	if(sum==total){
+		output.value = sum+ " is a Amstrong number";
+	}
+	else{
+		output.value = sum+ " is not a Amstrong number";
+		
+	}
+}
+</script>
+</body>
+</html>
